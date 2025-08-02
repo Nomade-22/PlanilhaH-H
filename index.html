@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Planilha de Custo por Hora CLT</title>
+  <title>Planilha de Custo por Hora - HH Pró</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
-  <!-- Google Ads Pixel (opcional) -->
+  <!-- Google Ads Pixel -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17417674454"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -15,123 +15,132 @@
     gtag('config', 'AW-17417674454');
   </script>
 
+  <!-- Contagem Regressiva -->
+  <script>
+    const tempoFinal = new Date().getTime() + 2 * 60 * 60 * 1000;
+    const iniciarContagem = () => {
+      const x = setInterval(() => {
+        const agora = new Date().getTime();
+        const distancia = tempoFinal - agora;
+
+        const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+        const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+        document.getElementById("contador").innerHTML = `${horas}h ${minutos}m ${segundos}s`;
+
+        if (distancia < 0) {
+          clearInterval(x);
+          document.getElementById("contador").innerHTML = "Promoção encerrada";
+        }
+      }, 1000);
+    };
+    window.onload = iniciarContagem;
+  </script>
+
   <style>
     body {
-      margin: 0;
+      background-color: #0d0d0d;
+      color: #ffffff;
       font-family: 'Inter', sans-serif;
-      background-color: #121212;
-      color: white;
+      margin: 0;
+      padding: 0;
       text-align: center;
-      padding: 2rem;
     }
-
+    header {
+      padding: 2rem 1rem 1rem;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+    .descricao {
+      font-size: 1.1rem;
+      margin: 1rem auto;
+      max-width: 600px;
+      line-height: 1.6;
+    }
     .banner {
-      background-color: #1e1e1e;
-      padding: 1rem;
-      border: 2px dashed #00ff88;
-      margin-bottom: 2rem;
+      margin: 2rem auto;
+      max-width: 400px;
     }
-
     .banner img {
-      max-width: 100%;
-      height: auto;
+      width: 100%;
       border-radius: 12px;
-      margin-top: 1rem;
+      box-shadow: 0 0 12px #00ff88;
     }
-
-    .timer {
-      font-size: 2rem;
-      color: #ff4444;
-      font-weight: bold;
-      animation: pulse 1s infinite;
-    }
-
-    @keyframes pulse {
-      0% { opacity: 1; }
-      50% { opacity: 0.5; }
-      100% { opacity: 1; }
-    }
-
-    .cta-button {
-      background: #00ff88;
-      color: #000;
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 8px;
-      margin: 2rem 0;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-
-    .cta-button:hover {
-      transform: scale(1.05);
-    }
-
-    .testimonials {
-      margin-top: 3rem;
-      background: #1c1c1c;
-      border-radius: 8px;
+    .oferta {
+      background-color: #1f1f1f;
+      margin: 2rem auto;
       padding: 1rem;
+      border-radius: 8px;
+      max-width: 450px;
+      box-shadow: 0 0 10px #00ff88;
     }
-
-    .testimonial {
-      font-style: italic;
-      margin: 1rem 0;
+    .oferta h2 {
+      font-size: 1.6rem;
+      color: #00ff88;
+      margin-bottom: 0.5rem;
     }
-
+    .contador {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #ff3c3c;
+      animation: piscar 1s infinite alternate;
+    }
+    @keyframes piscar {
+      from { opacity: 1; }
+      to { opacity: 0.5; }
+    }
+    .botao-comprar {
+      display: inline-block;
+      margin-top: 2rem;
+      background-color: #00ff88;
+      color: #000;
+      font-weight: 700;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .botao-comprar:hover {
+      background-color: #00cc6a;
+    }
     footer {
-      margin-top: 4rem;
-      color: #aaa;
-      font-size: 0.8rem;
+      margin-top: 3rem;
+      font-size: 0.85rem;
+      color: #666;
     }
   </style>
 </head>
 <body>
-  <h1>Planilha de Custo de Funcionário por Hora</h1>
-  <p>Transforme sua gestão de custos com uma ferramenta precisa e profissional.</p>
+
+  <header>
+    <h1>Planilha HH Pró</h1>
+    <p class="descricao">
+      Descubra quanto realmente custa cada hora de um funcionário CLT na sua empresa com esta planilha simples e precisa.
+    </p>
+  </header>
 
   <div class="banner">
-    <strong>🔥 Oferta relâmpago: de <s>R$50</s> por apenas <span style="color: #00ff88;">R$10</span>!</strong>
-    <p class="timer" id="countdown">02:00:00</p>
-    <img src="banner-promocao.png" alt="Banner de Oferta">
+    <img src="banner_oferta_planilha_hh.png" alt="Banner promocional da planilha de custo por hora">
   </div>
 
-  <a href="https://pay.kiwify.com.br/02sDp4X" target="_blank">
-    <button class="cta-button" onclick="gtag('event', 'conversion', {'send_to': 'AW-17417674454/Qx-hCN74Ov0aENa9svFA'});">
-      Quero começar agora
-    </button>
+  <div class="oferta">
+    <h2>🔥 De <del>R$50,00</del> por apenas R$10,00!</h2>
+    <p>Oferta válida por tempo limitado:</p>
+    <div id="contador" class="contador">Carregando...</div>
+  </div>
+
+  <a href="https://pay.kiwify.com.br/02sDp4X" class="botao-comprar" onclick="gtag('event', 'conversion', {'send_to': 'AW-17417674454/Qx-hCN74Ov0aENa9svFA'});">
+    Quero garantir agora!
   </a>
 
-  <div class="testimonials">
-    <h2>Depoimentos de quem já usa:</h2>
-    <div class="testimonial">"Economizei mais de 8 horas por semana só com essa planilha!" – Rafael M.</div>
-    <div class="testimonial">"Simples, prática e profissional. Vale muito mais que R$10." – Camila F.</div>
-    <div class="testimonial">"Era exatamente o que faltava no meu controle de custos." – João P.</div>
-  </div>
-
   <footer>
-    © 2025 – Ferramenta digital para gestão profissional de custos.
+    <p>Produto digital. Entrega imediata via área de membros Kiwify.</p>
   </footer>
 
-  <script>
-    // Contador regressivo de 2h
-    const countdown = document.getElementById("countdown");
-    let timeLeft = 2 * 60 * 60;
-
-    function formatTime(seconds) {
-      const hrs = String(Math.floor(seconds / 3600)).padStart(2, '0');
-      const mins = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
-      const secs = String(seconds % 60).padStart(2, '0');
-      return `${hrs}:${mins}:${secs}`;
-    }
-
-    setInterval(() => {
-      if (timeLeft > 0) {
-        timeLeft--;
-        countdown.textContent = formatTime(timeLeft);
-      }
-    }, 1000);
-  </script>
 </body>
 </html>
