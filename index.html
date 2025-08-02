@@ -2,145 +2,150 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Planilha de Custo por Hora - HH Pró</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Planilha de Custo por Hora CLT</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-
-  <!-- Google Ads Pixel -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17417674454"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-17417674454');
-  </script>
-
-  <!-- Contagem Regressiva -->
-  <script>
-    const tempoFinal = new Date().getTime() + 2 * 60 * 60 * 1000;
-    const iniciarContagem = () => {
-      const x = setInterval(() => {
-        const agora = new Date().getTime();
-        const distancia = tempoFinal - agora;
-
-        const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-        const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
-
-        document.getElementById("contador").innerHTML = `${horas}h ${minutos}m ${segundos}s`;
-
-        if (distancia < 0) {
-          clearInterval(x);
-          document.getElementById("contador").innerHTML = "Promoção encerrada";
-        }
-      }, 1000);
-    };
-    window.onload = iniciarContagem;
-  </script>
-
   <style>
     body {
-      background-color: #0d0d0d;
-      color: #ffffff;
-      font-family: 'Inter', sans-serif;
       margin: 0;
-      padding: 0;
-      text-align: center;
+      font-family: 'Inter', sans-serif;
+      background: #0d0d0d;
+      color: #f0f0f0;
     }
     header {
-      padding: 2rem 1rem 1rem;
+      text-align: center;
+      padding: 40px 20px 20px;
     }
     header h1 {
       font-size: 2.5rem;
-      font-weight: 800;
+      color: #3b95fc;
     }
-    .descricao {
-      font-size: 1.1rem;
-      margin: 1rem auto;
-      max-width: 600px;
-      line-height: 1.6;
+    .hero-img {
+      max-width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 0 30px #000;
+      display: block;
+      margin: 30px auto;
     }
-    .banner {
-      margin: 2rem auto;
-      max-width: 400px;
+    .content {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.2rem;
+      line-height: 1.7;
     }
-    .banner img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 0 12px #00ff88;
-    }
-    .oferta {
-      background-color: #1f1f1f;
-      margin: 2rem auto;
-      padding: 1rem;
-      border-radius: 8px;
-      max-width: 450px;
-      box-shadow: 0 0 10px #00ff88;
-    }
-    .oferta h2 {
-      font-size: 1.6rem;
-      color: #00ff88;
-      margin-bottom: 0.5rem;
-    }
-    .contador {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #ff3c3c;
-      animation: piscar 1s infinite alternate;
-    }
-    @keyframes piscar {
-      from { opacity: 1; }
-      to { opacity: 0.5; }
-    }
-    .botao-comprar {
-      display: inline-block;
-      margin-top: 2rem;
-      background-color: #00ff88;
-      color: #000;
-      font-weight: 700;
-      padding: 1rem 2rem;
-      font-size: 1.1rem;
-      border: none;
+    .button {
+      background: #3b95fc;
+      color: white;
+      font-weight: bold;
+      padding: 18px 32px;
+      font-size: 1.3rem;
       border-radius: 12px;
       text-decoration: none;
-      transition: 0.3s;
+      display: inline-block;
+      margin-top: 30px;
+      box-shadow: 0 0 15px #3b95fc;
+      transition: 0.3s ease;
     }
-    .botao-comprar:hover {
-      background-color: #00cc6a;
+    .button:hover {
+      background: #1c5bbf;
+    }
+    .countdown-box {
+      margin-top: 30px;
+      padding: 15px 20px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #3b95fc, #1c5bbf);
+      color: #fff;
+      font-weight: bold;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 0 15px #3b95fc;
+      font-size: 1.2rem;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 15px #3b95fc; }
+      50% { box-shadow: 0 0 30px #3b95fc; }
+      100% { box-shadow: 0 0 15px #3b95fc; }
+    }
+    .depoimentos {
+      max-width: 900px;
+      margin: 50px auto;
+      display: grid;
+      gap: 20px;
+    }
+    .depoimento {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #000;
     }
     footer {
-      margin-top: 3rem;
-      font-size: 0.85rem;
-      color: #666;
+      text-align: center;
+      padding: 40px 20px 20px;
+      color: #777;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Planilha HH Pró</h1>
-    <p class="descricao">
-      Descubra quanto realmente custa cada hora de um funcionário CLT na sua empresa com esta planilha simples e precisa.
-    </p>
-  </header>
+<header>
+  <h1>Planilha de Custo por Hora CLT</h1>
+</header>
 
-  <div class="banner">
-    <img src="banner_oferta_planilha_hh.png" alt="Banner promocional da planilha de custo por hora">
-  </div>
+<img src="mockup_profissional_clt.jpg" alt="Mockup da planilha" class="hero-img" />
 
-  <div class="oferta">
-    <h2>🔥 De <del>R$50,00</del> por apenas R$10,00!</h2>
-    <p>Oferta válida por tempo limitado:</p>
-    <div id="contador" class="contador">Carregando...</div>
-  </div>
+<div class="content">
+  <p>Descubra o custo real por hora de cada funcionário CLT com esta ferramenta completa.</p>
+  <p>Ideal para construção civil, prestadores de serviço, MEIs e pequenas empresas.</p>
+  <p>Inclui cálculo automático de encargos, impostos, lucro, benefícios e antecipação.</p>
+  <p><strong>Receba: Calculadora HTML + Manual PDF + Mockup Profissional</strong></p>
+  <p><strong>Preço simbólico: apenas R$10</strong></p>
 
-  <a href="https://pay.kiwify.com.br/02sDp4X" class="botao-comprar" onclick="gtag('event', 'conversion', {'send_to': 'AW-17417674454/Qx-hCN74Ov0aENa9svFA'});">
-    Quero garantir agora!
-  </a>
+  <a href="https://pay.kiwify.com.br/02sDp4X" class="button" target="_blank">Quero garantir minha planilha</a>
 
-  <footer>
-    <p>Produto digital. Entrega imediata via área de membros Kiwify.</p>
-  </footer>
+  <div class="countdown-box" id="contador">⏳ Carregando tempo restante...</div>
+
+  <img src="banner_promocional.jpg" alt="Promoção R$10" class="hero-img" style="margin-top: 30px; max-width: 600px;" />
+</div>
+
+<section class="depoimentos">
+  <div class="depoimento">🗣️ “Muito completa! Agora sei quanto cobrar por hora dos meus funcionários. Salvou meu financeiro!”<br><strong>– Ricardo, Mestre de Obras</strong></div>
+  <div class="depoimento">🗣️ “Planilha prática e objetiva. Os cálculos batem certinho com meus orçamentos.”<br><strong>– Ana, Engenheira Civil</strong></div>
+  <div class="depoimento">🗣️ “Perfeita para pequenas empresas que querem precificar certo e ter lucro!”<br><strong>– Marcos, Empresário</strong></div>
+</section>
+
+<footer>
+  © 2025 Planilha CLT
+</footer>
+
+<script>
+  const fim = new Date();
+  fim.setHours(fim.getHours() + 2); // 2 horas a partir da abertura
+
+  function atualizarContador() {
+    const agora = new Date();
+    const restante = fim - agora;
+
+    if (restante <= 0) {
+      document.getElementById("contador").innerText = "⚠️ Oferta encerrada";
+      return;
+    }
+
+    const horas = Math.floor((restante / (1000 * 60 * 60)) % 24);
+    const minutos = Math.floor((restante / (1000 * 60)) % 60);
+    const segundos = Math.floor((restante / 1000) % 60);
+
+    document.getElementById("contador").innerText =
+      `⏳ Oferta acaba em ${horas}h ${minutos}m ${segundos}s`;
+  }
+
+  atualizarContador();
+  setInterval(atualizarContador, 1000);
+</script>
 
 </body>
 </html>
