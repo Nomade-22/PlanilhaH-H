@@ -51,10 +51,37 @@
     .button:hover {
       background: #1c5bbf;
     }
-    .countdown {
-      font-size: 1rem;
-      color: #ffcc00;
-      margin-top: 12px;
+    .countdown-box {
+      margin-top: 30px;
+      padding: 15px 20px;
+      border-radius: 12px;
+      background: radial-gradient(circle, #ff9900, #cc6600);
+      color: #000;
+      font-weight: bold;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 0 15px #ff8000;
+      font-size: 1.2rem;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 15px #ff8000; }
+      50% { box-shadow: 0 0 30px #ff8000; }
+      100% { box-shadow: 0 0 15px #ff8000; }
+    }
+    .banner-promo {
+      margin-top: 20px;
+      padding: 14px 20px;
+      background: linear-gradient(45deg, #ff3c00, #ff9900);
+      border-radius: 12px;
+      font-size: 1.3rem;
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 0 20px #ff3c00;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .depoimentos {
       max-width: 900px;
@@ -93,10 +120,8 @@
 
   <a href="https://pay.kiwify.com.br/SEULINK" class="button" target="_blank">Quero garantir minha planilha</a>
 
-  <div class="countdown" id="contador">⏳ Carregando oferta...</div>
-  <div style="margin-top: 20px; background: #222; color: #00ff88; padding: 12px 20px; border-radius: 12px; font-weight: bold; max-width: 360px; margin-left: auto; margin-right: auto;">
-    💥 Promoção Especial: De <s>R$50</s> por apenas <strong>R$10</strong>!
-  </div>
+  <div class="countdown-box" id="contador">⏳ Carregando tempo restante...</div>
+  <div class="banner-promo">💥 PROMOÇÃO ESPECIAL: DE R$50 POR APENAS <strong>R$10 HOJE</strong>!</div>
 </div>
 
 <section class="depoimentos">
@@ -111,7 +136,7 @@
 
 <script>
   const fim = new Date();
-  fim.setHours(fim.getHours() + 12); // 12h a partir da hora de acesso
+  fim.setHours(fim.getHours() + 2); // 2 horas a partir da abertura
 
   function atualizarContador() {
     const agora = new Date();
