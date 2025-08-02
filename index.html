@@ -2,150 +2,136 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Planilha de Custo por Hora CLT</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Google Ads Pixel (opcional) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17417674454"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17417674454');
+  </script>
+
   <style>
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #0d0d0d;
-      color: #f0f0f0;
-    }
-    header {
-      text-align: center;
-      padding: 40px 20px 20px;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      color: #3b95fc;
-    }
-    .hero-img {
-      max-width: 100%;
-      border-radius: 16px;
-      box-shadow: 0 0 30px #000;
-      display: block;
-      margin: 30px auto;
-    }
-    .content {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-      text-align: center;
-      font-size: 1.2rem;
-      line-height: 1.7;
-    }
-    .button {
-      background: #3b95fc;
+      background-color: #121212;
       color: white;
-      font-weight: bold;
-      padding: 18px 32px;
-      font-size: 1.3rem;
-      border-radius: 12px;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 30px;
-      box-shadow: 0 0 15px #3b95fc;
-      transition: 0.3s ease;
-    }
-    .button:hover {
-      background: #1c5bbf;
-    }
-    .countdown-box {
-      margin-top: 30px;
-      padding: 15px 20px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #3b95fc, #1c5bbf);
-      color: #fff;
-      font-weight: bold;
-      max-width: 400px;
-      margin-left: auto;
-      margin-right: auto;
-      box-shadow: 0 0 15px #3b95fc;
-      font-size: 1.2rem;
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 15px #3b95fc; }
-      50% { box-shadow: 0 0 30px #3b95fc; }
-      100% { box-shadow: 0 0 15px #3b95fc; }
-    }
-    .depoimentos {
-      max-width: 900px;
-      margin: 50px auto;
-      display: grid;
-      gap: 20px;
-    }
-    .depoimento {
-      background: #1a1a1a;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px #000;
-    }
-    footer {
       text-align: center;
-      padding: 40px 20px 20px;
-      color: #777;
-      font-size: 0.9rem;
+      padding: 2rem;
+    }
+
+    .banner {
+      background-color: #1e1e1e;
+      padding: 1rem;
+      border: 2px dashed #00ff88;
+      margin-bottom: 2rem;
+    }
+
+    .banner img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin-top: 1rem;
+    }
+
+    .timer {
+      font-size: 2rem;
+      color: #ff4444;
+      font-weight: bold;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+
+    .cta-button {
+      background: #00ff88;
+      color: #000;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      margin: 2rem 0;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .cta-button:hover {
+      transform: scale(1.05);
+    }
+
+    .testimonials {
+      margin-top: 3rem;
+      background: #1c1c1c;
+      border-radius: 8px;
+      padding: 1rem;
+    }
+
+    .testimonial {
+      font-style: italic;
+      margin: 1rem 0;
+    }
+
+    footer {
+      margin-top: 4rem;
+      color: #aaa;
+      font-size: 0.8rem;
     }
   </style>
 </head>
 <body>
+  <h1>Planilha de Custo de Funcionário por Hora</h1>
+  <p>Transforme sua gestão de custos com uma ferramenta precisa e profissional.</p>
 
-<header>
-  <h1>Planilha de Custo por Hora CLT</h1>
-</header>
+  <div class="banner">
+    <strong>🔥 Oferta relâmpago: de <s>R$50</s> por apenas <span style="color: #00ff88;">R$10</span>!</strong>
+    <p class="timer" id="countdown">02:00:00</p>
+    <img src="banner-promocao.png" alt="Banner de Oferta">
+  </div>
 
-<img src="mockup_profissional_clt.jpg" alt="Mockup da planilha" class="hero-img" />
+  <a href="https://pay.kiwify.com.br/02sDp4X" target="_blank">
+    <button class="cta-button" onclick="gtag('event', 'conversion', {'send_to': 'AW-17417674454/Qx-hCN74Ov0aENa9svFA'});">
+      Quero começar agora
+    </button>
+  </a>
 
-<div class="content">
-  <p>Descubra o custo real por hora de cada funcionário CLT com esta ferramenta completa.</p>
-  <p>Ideal para construção civil, prestadores de serviço, MEIs e pequenas empresas.</p>
-  <p>Inclui cálculo automático de encargos, impostos, lucro, benefícios e antecipação.</p>
-  <p><strong>Receba: Calculadora HTML + Manual PDF + Mockup Profissional</strong></p>
-  <p><strong>Preço simbólico: apenas R$10</strong></p>
+  <div class="testimonials">
+    <h2>Depoimentos de quem já usa:</h2>
+    <div class="testimonial">"Economizei mais de 8 horas por semana só com essa planilha!" – Rafael M.</div>
+    <div class="testimonial">"Simples, prática e profissional. Vale muito mais que R$10." – Camila F.</div>
+    <div class="testimonial">"Era exatamente o que faltava no meu controle de custos." – João P.</div>
+  </div>
 
-  <a href="https://pay.kiwify.com.br/SEULINK" class="button" target="_blank">Quero garantir minha planilha</a>
+  <footer>
+    © 2025 – Ferramenta digital para gestão profissional de custos.
+  </footer>
 
-  <div class="countdown-box" id="contador">⏳ Carregando tempo restante...</div>
+  <script>
+    // Contador regressivo de 2h
+    const countdown = document.getElementById("countdown");
+    let timeLeft = 2 * 60 * 60;
 
-  <img src="banner_promocional.jpg" alt="Promoção R$10" class="hero-img" style="margin-top: 30px; max-width: 600px;" />
-</div>
-
-<section class="depoimentos">
-  <div class="depoimento">🗣️ “Muito completa! Agora sei quanto cobrar por hora dos meus funcionários. Salvou meu financeiro!”<br><strong>– Ricardo, Mestre de Obras</strong></div>
-  <div class="depoimento">🗣️ “Planilha prática e objetiva. Os cálculos batem certinho com meus orçamentos.”<br><strong>– Ana, Engenheira Civil</strong></div>
-  <div class="depoimento">🗣️ “Perfeita para pequenas empresas que querem precificar certo e ter lucro!”<br><strong>– Marcos, Empresário</strong></div>
-</section>
-
-<footer>
-  © 2025 Planilha CLT
-</footer>
-
-<script>
-  const fim = new Date();
-  fim.setHours(fim.getHours() + 2); // 2 horas a partir da abertura
-
-  function atualizarContador() {
-    const agora = new Date();
-    const restante = fim - agora;
-
-    if (restante <= 0) {
-      document.getElementById("contador").innerText = "⚠️ Oferta encerrada";
-      return;
+    function formatTime(seconds) {
+      const hrs = String(Math.floor(seconds / 3600)).padStart(2, '0');
+      const mins = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
+      const secs = String(seconds % 60).padStart(2, '0');
+      return `${hrs}:${mins}:${secs}`;
     }
 
-    const horas = Math.floor((restante / (1000 * 60 * 60)) % 24);
-    const minutos = Math.floor((restante / (1000 * 60)) % 60);
-    const segundos = Math.floor((restante / 1000) % 60);
-
-    document.getElementById("contador").innerText =
-      `⏳ Oferta acaba em ${horas}h ${minutos}m ${segundos}s`;
-  }
-
-  atualizarContador();
-  setInterval(atualizarContador, 1000);
-</script>
-
+    setInterval(() => {
+      if (timeLeft > 0) {
+        timeLeft--;
+        countdown.textContent = formatTime(timeLeft);
+      }
+    }, 1000);
+  </script>
 </body>
 </html>
