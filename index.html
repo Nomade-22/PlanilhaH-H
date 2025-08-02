@@ -92,7 +92,11 @@
   <p><strong>Preço simbólico: apenas R$10</strong></p>
 
   <a href="https://pay.kiwify.com.br/SEULINK" class="button" target="_blank">Quero garantir minha planilha</a>
-  <div class="countdown">⚠️ Oferta por tempo limitado ⚠️</div>
+
+  <div class="countdown" id="contador">⏳ Carregando oferta...</div>
+  <div style="margin-top: 20px; background: #222; color: #00ff88; padding: 12px 20px; border-radius: 12px; font-weight: bold; max-width: 360px; margin-left: auto; margin-right: auto;">
+    💥 Promoção Especial: De <s>R$50</s> por apenas <strong>R$10</strong>!
+  </div>
 </div>
 
 <section class="depoimentos">
@@ -104,6 +108,31 @@
 <footer>
   © 2025 Planilha CLT
 </footer>
+
+<script>
+  const fim = new Date();
+  fim.setHours(fim.getHours() + 12); // 12h a partir da hora de acesso
+
+  function atualizarContador() {
+    const agora = new Date();
+    const restante = fim - agora;
+
+    if (restante <= 0) {
+      document.getElementById("contador").innerText = "⚠️ Oferta encerrada";
+      return;
+    }
+
+    const horas = Math.floor((restante / (1000 * 60 * 60)) % 24);
+    const minutos = Math.floor((restante / (1000 * 60)) % 60);
+    const segundos = Math.floor((restante / 1000) % 60);
+
+    document.getElementById("contador").innerText =
+      `⏳ Oferta acaba em ${horas}h ${minutos}m ${segundos}s`;
+  }
+
+  atualizarContador();
+  setInterval(atualizarContador, 1000);
+</script>
 
 </body>
 </html>
